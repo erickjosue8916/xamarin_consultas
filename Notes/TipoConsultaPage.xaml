@@ -14,7 +14,8 @@
             <DataTemplate>
                 <ViewCell>
                     <Grid>
-                        <Label Text="{Binding Descripcion}"></Label>
+                        <Label Text="{Binding Id}"></Label>
+                        <Label Grid.Column="1" Text="{Binding Descripcion}"></Label>
                         
                     </Grid>
                 </ViewCell>

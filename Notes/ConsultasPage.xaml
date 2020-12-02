@@ -15,7 +15,10 @@
                 <DataTemplate>
                     <ViewCell>
                         <Grid>
-                            <Label  Text="{Binding Observaciones}" ></Label>
+                            <Label  Text="{Binding Fecha}" ></Label>
+                            <Label Grid.Column="1" Text="{Binding Observaciones}" ></Label>
+                            <Label Grid.Column="2" Text="{Binding IdPaciente}" ></Label>
+                            <Label Grid.Column="4" Text="{Binding IdTipoConsulta}" ></Label>
                         </Grid>
                     </ViewCell>
                 </DataTemplate>

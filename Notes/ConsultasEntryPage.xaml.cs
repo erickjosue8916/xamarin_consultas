@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using Notes;
+using System;
+using Tarea.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Tarea.Models;
-using Notes;
 
 namespace Tarea
 {
@@ -28,16 +23,22 @@ namespace Tarea
         }
         async void OnSaveButtonClicked(object sender, EventArgs e)
         {
-            var paciente = (Consulta)BindingContext;
+            Console.WriteLine(date.Date.ToString());
+            var paciente = (Paciente) pacientesList.SelectedItem;
+            var tipoConsulta = (TipoConsulta)tipoConsultaList.SelectedItem;
+            var consulta = (Consulta)BindingContext;
 
-            await App.Database.SaveConsultaAsync(paciente);
+            consulta.IdPaciente = paciente.Id;
+            consulta.IdTipoConsulta = tipoConsulta.Id;
+            consulta.Fecha = date.Date.ToString();
+            await App.Database.SaveConsultaAsync(consulta);
             await Navigation.PopAsync();
         }
 
         async void OnDeleteButtonClicked(object sender, EventArgs e)
         {
-            var note = (Consulta)BindingContext;
-            await App.Database.DeleteConsultaAsync(note);
+            var consulta = (Consulta)BindingContext;
+            await App.Database.DeleteConsultaAsync(consulta);
             await Navigation.PopAsync();
         }
     }

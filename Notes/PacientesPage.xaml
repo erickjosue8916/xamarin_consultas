@@ -14,10 +14,11 @@
             <DataTemplate>
                 <ViewCell>
                     <Grid>
-                        <Label Text="{Binding Nombre}"></Label>
-                        <Label  Grid.Column="1" Text="{Binding Direccion}"></Label>
-                        <Label  Grid.Column="2" Text="{Binding Edad}"></Label>
-                        <Label  Grid.Column="3" Text="{Binding Telefono}"></Label>
+                        <Label Text="{Binding Id}"></Label>
+                        <Label Grid.Column="1" Text="{Binding Nombre}"></Label>
+                        <Label  Grid.Column="2" Text="{Binding Direccion}"></Label>
+                        <Label  Grid.Column="3" Text="{Binding Edad}"></Label>
+                        <Label  Grid.Column="4" Text="{Binding Telefono}"></Label>
                     </Grid>
                 </ViewCell>
             </DataTemplate>

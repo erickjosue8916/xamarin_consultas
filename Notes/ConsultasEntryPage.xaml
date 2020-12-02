@@ -5,7 +5,7 @@
              >
     <StackLayout Margin="20">
         <Label Text="Fecha:"/>
-        <DatePicker Date="{Binding Fecha}"
+        <DatePicker x:Name="date" Date="{Binding Fecha}"
                Margin="20,0,20,0"/>
 
         <Label Text="Observaciones:"/>
