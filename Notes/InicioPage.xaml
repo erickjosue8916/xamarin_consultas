@@ -8,5 +8,6 @@
         <local:PacientesPage />
         <local1:ConsultasPage />
         <local1:TipoConsultaPage />
+        <local1:FiltroPacientes />
     </TabbedPage.Children>
 </TabbedPage>
