@@ -24,7 +24,7 @@ namespace Notes
         public App()
         {
             InitializeComponent();
-            MainPage = new NavigationPage(new ConsultasPage());
+            MainPage = new NavigationPage(new InicioPage());
         }
 
         protected override void OnStart()

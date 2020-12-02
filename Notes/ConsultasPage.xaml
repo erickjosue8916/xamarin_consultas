@@ -7,17 +7,20 @@
         <ToolbarItem Text="+"
                      Clicked="OnConsultaAddedClicked" />
     </ContentPage.ToolbarItems>
-    <ListView x:Name="listView"
+    <StackLayout>
+        <ListView x:Name="listView"
               Margin="20"
               ItemSelected="OnListViewItemSelected">
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <ViewCell>
-                    <Grid>
-                        <Label Text="{Binding Descripcion}"></Label>
-                    </Grid>
-                </ViewCell>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Label  Text="{Binding Observaciones}" ></Label>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+    
 </ContentPage>
