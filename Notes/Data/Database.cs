@@ -33,6 +33,12 @@ namespace Tarea.Data
             return _database.Table<Consulta>().ToListAsync();
         }
 
+        public Task<List<Consulta>> GetConsultasFilterAsync(string nombrePaciente)
+        {
+            var list = _database.QueryAsync<Consulta>("SELECT * FROM Consulta WHERE NombrePaciente LIKE '%" + nombrePaciente + "%'");
+            return list;
+        }
+
         // DETAILS
         public Task<Paciente> GetPacienteAsync(int id)
         {
@@ -40,6 +46,7 @@ namespace Tarea.Data
                             .Where(i => i.Id == id)
                             .FirstOrDefaultAsync();
         }
+
 
         public Task<TipoConsulta> GetTipoConsultaAsync(int id)
         {

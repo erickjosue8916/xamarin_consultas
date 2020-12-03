@@ -5,7 +5,7 @@
              Title="Filtro">
     <ContentPage.Content>
         <StackLayout>
-            <Grid>
+            <Grid MinimumHeightRequest="100">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
@@ -25,11 +25,34 @@
             </Grid>
 
             <SearchBar Placeholder="Buscar pacientes..."
-                       TextTransform="Uppercase"
                        HorizontalTextAlignment="Center"
                        FontSize="Medium"
                        x:Name="searchPaciente"
                        TextChanged="searchPaciente_TextChanged"/>
+
+            <StackLayout>
+                <ListView x:Name="listView"
+              Margin="20">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="100" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" Text="{Binding Fecha}" ></Label>
+                                    <Label Grid.Column="1" Text="{Binding Observaciones}" ></Label>
+                                    <Label Grid.Column="2" Text="{Binding NombrePaciente}" ></Label>
+                                    <Label Grid.Column="3" Text="{Binding NombreTipoConsulta}" ></Label>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
 
         </StackLayout>
     </ContentPage.Content>

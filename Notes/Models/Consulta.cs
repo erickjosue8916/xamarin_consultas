@@ -12,9 +12,9 @@ namespace Tarea.Models
         public string Fecha { get; set; }
         public string Observaciones { get; set; }
         [Indexed]
-        public int IdPaciente { get; set; }
+        public string NombrePaciente { get; set; }
 
         [Indexed]
-        public int IdTipoConsulta { get; set; }
+        public string NombreTipoConsulta { get; set; }
     }
 }

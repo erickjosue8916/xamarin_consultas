@@ -28,8 +28,8 @@ namespace Tarea
             var tipoConsulta = (TipoConsulta)tipoConsultaList.SelectedItem;
             var consulta = (Consulta)BindingContext;
 
-            consulta.IdPaciente = paciente.Id;
-            consulta.IdTipoConsulta = tipoConsulta.Id;
+            consulta.NombrePaciente = paciente.Nombre;
+            consulta.NombreTipoConsulta = tipoConsulta.Descripcion;
             consulta.Fecha = date.Date.ToString();
             await App.Database.SaveConsultaAsync(consulta);
             await Navigation.PopAsync();

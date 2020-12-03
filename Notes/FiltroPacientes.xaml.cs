@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Notes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,15 +17,28 @@ namespace Tarea
         {
             InitializeComponent();
         }
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+
+            listView.ItemsSource = await App.Database.GetConsultasAsync();
+        }
 
         private void OnDateSelected(object sender, DateChangedEventArgs e)
         {
 
         }
 
-        private void searchPaciente_TextChanged(object sender, TextChangedEventArgs e)
+        private async void searchPaciente_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            if (e.NewTextValue == "")
+            {
+                listView.ItemsSource = await App.Database.GetConsultasAsync();
+            }
+            else
+            {
+                listView.ItemsSource = await App.Database.GetConsultasFilterAsync(e.NewTextValue);
+            }
         }
     }
 }
