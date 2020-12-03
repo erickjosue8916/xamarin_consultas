@@ -35,7 +35,7 @@ namespace Tarea.Data
 
         public Task<List<Consulta>> GetConsultasFilterAsync(string nombrePaciente)
         {
-            var list = _database.QueryAsync<Consulta>("SELECT * FROM Consulta WHERE NombrePaciente LIKE '%" + nombrePaciente + "%'");
+            var list = _database.QueryAsync<Consulta>("SELECT c.Id, c.Fecha, c.Observaciones, c.IdPaciente, c.IdTipoConsulta FROM Consulta as c INNER JOIN Paciente as p on c.IdPaciente = p.Id WHERE p.Nombre LIKE '%" + nombrePaciente + "%'");
             return list;
         }
 

@@ -8,6 +8,21 @@
                      Clicked="OnConsultaAddedClicked" />
     </ContentPage.ToolbarItems>
     <StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label HorizontalTextAlignment="Center" Grid.Column="0" Grid.Row="0" FontAttributes="Bold" Text="Fecha" ></Label>
+            <Label Grid.Column="1" Grid.Row="0" FontAttributes="Bold" Text="Observaciones" ></Label>
+            <Label Grid.Column="2" Grid.Row="0" FontAttributes="Bold" Text="Id del Paciente" ></Label>
+            <Label Grid.Column="3" Grid.Row="0" FontAttributes="Bold" Text="Tipo consulta" ></Label>
+        </Grid>
         <ListView x:Name="listView"
               Margin="20"
               ItemSelected="OnListViewItemSelected">
@@ -18,13 +33,13 @@
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <Label Grid.Column="0" Text="{Binding Fecha}" ></Label>
-                            <Label Grid.Column="1" Text="{Binding Observaciones}" ></Label>
-                            <Label Grid.Column="2" Text="{Binding NombrePaciente}" ></Label>
-                            <Label Grid.Column="3" Text="{Binding NombreTipoConsulta}" ></Label>
+                            <Label HorizontalTextAlignment="Center" Grid.Column="0" Text="{Binding Fecha}" ></Label>
+                            <Label HorizontalTextAlignment="Center" Grid.Column="1" Text="{Binding Observaciones}" ></Label>
+                            <Label HorizontalTextAlignment="Center" Grid.Column="2" Text="{Binding IdPaciente}" ></Label>
+                            <Label HorizontalTextAlignment="Center" Grid.Column="3" Text="{Binding IdTipoConsulta}" ></Label>
                         </Grid>
                     </ViewCell>
                 </DataTemplate>
